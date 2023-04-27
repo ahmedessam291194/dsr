@@ -16,4 +16,8 @@ $(document).ready(function() {
             $("#home-section").fadeIn(100);
         }, 200);
     });
+
+    $(".details-box__item").on("click", function() {
+        $(this).find(".details-box__audio")[0].play();
+    });
 });
