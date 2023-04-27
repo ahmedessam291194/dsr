@@ -18,6 +18,19 @@ $(document).ready(function() {
     });
 
     $(".details-box__item").on("click", function() {
-        $(this).find(".details-box__audio")[0].play();
+
+        let audioList = $("audio");
+        for (const ele of audioList) {
+            ele.pause();
+            ele.currentTime = 0;
+        }
+        let audio = $(this).find(".details-box__audio")[0];
+
+        audio.play();
+
+        setTimeout(() => {
+            audio.pause();
+            audio.currentTime = 0;
+        }, 5000);
     });
 });
